@@ -1,0 +1,356 @@
+{
+  "profile": {
+    "name": "Anirudh T",
+    "pronouns": "He/Him",
+    "title": "Full-Stack Developer | C++ | Python | MERN Stack | Machine Learning",
+    "location": {
+      "institution": "Sri Shakthi Institute of Engineering and Technology",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "country": "India"
+    },
+    "education": {
+      "degree": "BE Computer Science and Engineering",
+      "institution": "Sri Shakthi Institute of Engineering and Technology",
+      "duration": "2023 - 2027"
+    },
+    "connections": 402,
+    "bio": "Computer Science undergraduate with a passion for building impactful tech solutions, grounded in strong foundations of data structures, algorithms, and system design. Experienced in developing scalable full-stack applications using the MERN stack, integrated with AI and machine learning models for intelligent, real-time systems. Passionate about solving complex problems, writing clean and efficient code, and constantly improving through self-learning and real-world application."
+  },
+  "skills": {
+    "primary": [
+      "Python",
+      "JavaScript", 
+      "C++",
+      "Full-Stack Development",
+      "Data Science"
+    ],
+    "programming_languages": [
+      "Python",
+      "JavaScript", 
+      "C++"
+    ],
+    "web_development": [
+      "React.js",
+      "TailwindCSS",
+      "Node.js",
+      "Express.js",
+      "Flask",
+      "Firebase",
+      "HTML5",
+      "CSS3",
+      "RESTful APIs",
+      "MongoDB",
+      "SQL"
+    ],
+    "machine_learning": [
+      "scikit-learn",
+      "OpenCV",
+      "NLTK",
+      "Pickle",
+      "NumPy",
+      "pandas"
+    ],
+    "tools_platforms": [
+      "Git",
+      "GitHub",
+      "Postman",
+      "REST Client",
+      "Vercel",
+      "Netlify",
+      "Visual Studio Code",
+      "Streamlit"
+    ],
+    "other_technologies": [
+      "WebSockets",
+      "Server-Sent Events (SSE)"
+    ],
+    "technologies": [
+      "MERN Stack",
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "JavaScript",
+      "TailwindCSS",
+      "Firebase",
+      "Machine Learning",
+      "NLP",
+      "Streamlit",
+      "scikit-learn",
+      "NLTK",
+      "WebSockets",
+      "Server-Sent Events"
+    ],
+    "frameworks": [
+      "React.js",
+      "Express.js",
+      "Node.js",
+      "Flask"
+    ],
+    "databases": [
+      "MongoDB",
+      "Firebase",
+      "SQL"
+    ],
+    "deployment": [
+      "Vercel",
+      "Netlify",
+      "Streamlit"
+    ]
+  },
+  "coursework": [
+    "Data Structures & Algorithms",
+    "Operating Systems", 
+    "DBMS",
+    "Computer Networks",
+    "Machine Learning",
+    "Artificial Intelligence", 
+    "Web Technologies",
+    "Software Engineering",
+    "Object-Oriented Programming",
+    "System Design"
+  ],
+  "certifications": [
+    {
+      "title": "Node.js, Express, MongoDB",
+      "issuer": "Udemy",
+      "year": 2025,
+      "description": "Comprehensive course strengthening skills in building RESTful APIs using Node.js and Express, handling CRUD operations with MongoDB and Mongoose, and implementing secure authentication and authorization workflows"
+    },
+    {
+      "title": "Machine Learning A-Z", 
+      "issuer": "Udemy",
+      "year": 2025,
+      "description": "Complete machine learning course covering algorithms, data preprocessing, and model deployment"
+    },
+    {
+      "title": "Python Essential Training",
+      "issuer": "LinkedIn Learning",
+      "year": 2024,
+      "url": "https://lnkd.in/dS_CQaRA",
+      "description": "Fundamental Python programming concepts and best practices"
+    }
+  ],
+  "projects": [
+    {
+      "name": "FlashChat",
+      "description": "Built a responsive real-time chat application with live message streaming capabilities that enables users to communicate instantly across different devices. The application features a modern, intuitive interface built with React.js and styled with Tailwind CSS for optimal user experience. Implemented WebSocket technology for seamless real-time communication, allowing messages to be delivered instantly without page refreshes. The backend is powered by Node.js and Express.js, providing robust server-side functionality and efficient message handling for multiple concurrent users.",
+      "tech_stack": "React.js, Tailwind CSS, WebSockets, Node.js, Express.js",
+      "live_demo": "https://flash-chat-phi.vercel.app/join",
+      "date": "May 2025",
+      "tags": ["React", "TailwindCSS", "WebSockets", "Node.js", "Express.js", "Real-time", "Chat"]
+    },
+    {
+      "name": "TypoMaster Web App",
+      "description": "A comprehensive real-time typing speed analyzer that meticulously tracks user input, calculates accuracy percentages, and measures words per minute using advanced Server-Sent Events (SSE) technology. This full-stack application provides instant feedback and detailed analytics to help users improve their typing skills through interactive practice sessions. The platform features a responsive design that works seamlessly across all devices, real-time progress tracking, and personalized performance insights. Built with the MERN stack, it stores user progress in MongoDB and delivers live updates through SSE, creating an engaging and educational typing experience for users of all skill levels.",
+      "tech_stack": "React.js, TailwindCSS, Node.js, Express.js, MongoDB, SSE",
+      "live_demo": "https://typo-master-alpha.vercel.app/",
+      "date": "April 2025",
+      "tags": ["React", "TailwindCSS", "Node.js", "Express.js", "MongoDB", "SSE", "MERN"]
+    },
+    {
+      "name": "Sentiment Analysis App",
+      "description": "An advanced Natural Language Processing (NLP) application that intelligently analyzes and classifies user-submitted text as Positive, Negative, or Neutral using a carefully trained machine learning model. This sophisticated system processes text input through multiple preprocessing stages, including tokenization, feature extraction, and sentiment scoring to deliver accurate emotional tone analysis. The application combines the power of scikit-learn algorithms with NLTK's comprehensive language processing capabilities, providing users with instant sentiment insights. Deployed on Streamlit Cloud, it offers an intuitive web interface where users can input any text and receive immediate, reliable sentiment classification results with confidence scores.",
+      "tech_stack": "Python, scikit-learn, NLTK, Streamlit, Pickle",
+      "live_demo": "https://sentiment0analyzer.streamlit.app/",
+      "date": "June 2025",
+      "tags": ["Python", "MachineLearning", "NLP", "Streamlit", "scikit-learn", "NLTK"]
+    },
+    {
+      "name": "BlogSphere – Blogging Platform",
+      "description": "A full-featured, professional blogging platform that provides users with a complete content management system including secure user authentication, rich-text editing capabilities, and comprehensive CRUD (Create, Read, Update, Delete) operations for blog posts. This robust web application features user registration and login functionality secured with JWT tokens and Bcrypt password hashing for maximum security. The platform includes an intuitive rich-text editor that allows bloggers to format their content with ease, supporting various text styles, images, and media embedding. Built with the MERN stack and styled with TailwindCSS, BlogSphere offers a modern, responsive design that ensures optimal user experience across all devices while providing scalable backend infrastructure for growing user bases.",
+      "tech_stack": "MERN Stack, JWT, Bcrypt, TailwindCSS",
+      "date": "January 2025", 
+      "tags": ["MERN", "JWT", "Bcrypt", "TailwindCSS", "Authentication", "CRUD"]
+    }
+  ],
+  "achievements": {
+    "hackathons": [
+      {
+        "title": "Top 100 – TruthTell Hackathon",
+        "year": 2025,
+        "description": "Achieved top 100 position in competitive hackathon"
+      }
+    ],
+    "leetcode": {
+      "profile_url": "https://leetcode.com/u/Anirudh_pedro/",
+      "problems_solved": 373,
+      "easy_solved": 158,
+      "easy_total": 889,
+      "medium_solved": 195,
+      "medium_total": 1894,
+      "hard_solved": 20,
+      "hard_total": 859,
+      "submissions": 778,
+      "contest_rating": 1502,
+      "global_ranking": "302,800 out of 700,000+ participants",
+      "contests_participated": 2,
+      "difficulty_breakdown": {
+        "easy": "158/889 (17.8%)",
+        "medium": "195/1894 (10.3%)",
+        "hard": "20/859 (2.3%)"
+      },
+      "milestones": [
+        {
+          "title": "370+ Problems Solved",
+          "description": "Milestone achieved with consistent practice across all difficulty levels"
+        },
+        {
+          "title": "100 Days Streak",
+          "description": "Maintained daily problem-solving consistency for 100 days"
+        },
+        {
+          "title": "50 Days Badge 2025",
+          "description": "Achieved 50-day streak in 2025"
+        }
+      ],
+      "learning_journey": {
+        "languages": ["C++", "Python"],
+        "transition": "Started with C++ for fundamentals, switched to Python for efficiency",
+        "challenging_topics": ["Trees", "Dynamic Programming", "Backtracking"],
+        "resources": ["neetcode.io"],
+        "skills_gained": [
+          "Clearer problem-solving logic",
+          "Confidence in tackling advanced topics",
+          "Consistency and resilience through practice",
+          "Deep love for structured thinking"
+        ]
+      }
+    },
+    "github": {
+      "username": "anirudh-pedro",
+      "contributions_last_year": 143,
+      "repositories": 12,
+      "profile_url": "https://github.com/anirudh-pedro"
+    }
+  },
+  "interests": [
+    "Full-stack web development",
+    "Machine learning",
+    "Problem-solving",
+    "Building impactful digital solutions",
+    "Backend development",
+    "Scalable API design",
+    "ML model deployment",
+    "Open-source contributions",
+    "Cloud services and APIs"
+  ],
+  "coding_profile": {
+    "programming_languages": {
+      "python": {
+        "proficiency": "Advanced",
+        "years_experience": 3,
+        "specialization": ["Machine Learning", "Backend Development", "Data Analysis", "API Development"],
+        "frameworks": ["Flask", "scikit-learn", "NLTK", "NumPy", "pandas"],
+        "notable_projects": ["Sentiment Analysis App", "ML model integration"]
+      },
+      "javascript": {
+        "proficiency": "Advanced", 
+        "years_experience": 2,
+        "specialization": ["Full-Stack Development", "Frontend", "Backend", "Real-time Applications"],
+        "frameworks": ["React.js", "Node.js", "Express.js"],
+        "notable_projects": ["FlashChat", "TypoMaster", "BlogSphere"]
+      },
+      "cpp": {
+        "proficiency": "Intermediate-Advanced",
+        "years_experience": 2,
+        "specialization": ["Data Structures & Algorithms", "Competitive Programming", "System Programming"],
+        "platforms": ["LeetCode", "Competitive Programming"],
+        "achievements": ["373+ LeetCode problems solved", "Contest Rating: 1502"]
+      }
+    },
+    "development_areas": {
+      "full_stack": {
+        "frontend": ["React.js", "TailwindCSS", "HTML5", "CSS3", "Responsive Design"],
+        "backend": ["Node.js", "Express.js", "Flask", "RESTful APIs"],
+        "databases": ["MongoDB", "Firebase", "SQL"],
+        "deployment": ["Vercel", "Netlify", "Streamlit Cloud"]
+      },
+      "machine_learning": {
+        "libraries": ["scikit-learn", "NLTK", "NumPy", "pandas", "OpenCV"],
+        "techniques": ["NLP", "Sentiment Analysis", "Data Preprocessing", "Model Training"],
+        "deployment": ["Streamlit", "Pickle", "Cloud Deployment"]
+      },
+      "real_time_systems": {
+        "technologies": ["WebSockets", "Server-Sent Events (SSE)"],
+        "applications": ["Real-time chat", "Live data streaming", "Interactive web apps"]
+      }
+    },
+    "problem_solving": {
+      "leetcode_stats": {
+        "total_solved": 373,
+        "easy": "158/889 (17.8%)",
+        "medium": "195/1894 (10.3%)", 
+        "hard": "20/859 (2.3%)",
+        "contest_rating": 1502,
+        "profile": "https://leetcode.com/u/Anirudh_pedro/"
+      },
+      "competitive_programming": {
+        "strengths": ["Data Structures", "Algorithms", "Problem Analysis"],
+        "challenging_areas": ["Trees", "Dynamic Programming", "Backtracking"],
+        "resources": ["neetcode.io", "LeetCode contests"]
+      }
+    },
+    "project_portfolio": {
+      "web_applications": 3,
+      "machine_learning_projects": 1,
+      "real_time_applications": 2,
+      "total_live_demos": 3,
+      "tech_stack_diversity": ["MERN Stack", "Python ML", "Real-time Web Tech"]
+    },
+    "current_skill_development": [
+      "Advanced backend architecture",
+      "ML model deployment in production",
+      "Cloud services integration",
+      "API optimization and scaling",
+      "Open-source contributions"
+    ]
+  },
+  "expertise_areas": [
+    "React",
+    "Node.js",
+    "MongoDB",
+    "Full-stack development",
+    "MERN Stack applications",
+    "Machine Learning integration",
+    "API development",
+    "Data Structures and Algorithms"
+  ],
+  "current_focus": [
+    "Sharpening backend development skills",
+    "Exploring scalable API design",
+    "Understanding ML model integration in production",
+    "Learning cloud services and deployment",
+    "Contributing to open-source projects"
+  ],
+  "seeking_guidance_on": [
+    "Deploying ML pipelines",
+    "Working efficiently with cloud services",
+    "API optimization and scaling",
+    "Production ML model management"
+  ],
+  "contact": {
+    "email": "anirudh200503@gmail.com",
+    "phone": "+91 9894969187",
+    "linkedin": "https://www.linkedin.com/in/anirudh-t-b5b26a2aa/",
+    "github": "https://github.com/anirudh-pedro",
+    "linkedin_connections": 402,
+    "open_to": [
+      "Collaboration on innovative tech solutions",
+      "Open-source contributions",
+      "Feedback and new ideas in ML/NLP domain",
+      "Questions about React, Node.js, MongoDB, full-stack development"
+    ]
+  },
+  "personality_traits": [
+    "Passionate",
+    "Self-driven",
+    "Detail-oriented",
+    "Consistent",
+    "Growth-minded",
+    "Collaborative",
+    "Problem-solver"
+  ],
+  "updated_date": "2025-08-07"
+}
