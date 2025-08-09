@@ -12,25 +12,20 @@ const Message = ({ message }) => {
     });
   };
 
-  // Function to format bot messages with proper line breaks and styling
   const formatBotMessage = (text) => {
     if (!isBot) return text;
 
-    // Split text into lines
     const lines = text.split('\n');
     
     return lines.map((line, index) => {
-      // Skip empty lines but add spacing
       if (!line.trim()) {
         return <br key={index} />;
       }
 
-      // Handle numbered lists (1. 2. 3. etc.)
       if (/^\d+\.\s/.test(line)) {
         const match = line.match(/^(\d+)\.\s(.+)/);
         if (match) {
           const [, number, content] = match;
-          // Handle bold project names
           const formattedContent = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
           return (
             <div key={index} className="mb-3">
@@ -46,10 +41,8 @@ const Message = ({ message }) => {
         }
       }
 
-      // Handle bullet points
       if (line.startsWith('• ') || line.startsWith('* ')) {
         const content = line.substring(2);
-        // Handle links in bullet points - support both "Link:" and "Live Demo:" formats
         if (content.startsWith('Link: ') || content.startsWith('Live Demo: ')) {
           const linkType = content.startsWith('Link: ') ? 'Link' : 'Live Demo';
           const url = content.startsWith('Link: ') ? content.substring(6) : content.substring(11);
@@ -69,7 +62,6 @@ const Message = ({ message }) => {
             </div>
           );
         } else {
-          // Handle bold text in bullet points
           const formattedContent = content.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
           return (
             <div key={index} className="ml-4 mb-1 flex items-start space-x-2">
@@ -83,10 +75,8 @@ const Message = ({ message }) => {
         }
       }
 
-      // Handle regular text with bold formatting and URL detection
       let processedLine = line;
       
-      // Handle markdown-style links [text](url)
       const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
       const markdownLinks = [...line.matchAll(markdownLinkRegex)];
       
@@ -98,7 +88,6 @@ const Message = ({ message }) => {
           const [fullMatch, linkText, url] = match;
           const matchStart = match.index;
           
-          // Add text before the link
           if (matchStart > lastIndex) {
             parts.push({
               type: 'text',
@@ -106,7 +95,6 @@ const Message = ({ message }) => {
             });
           }
           
-          // Add the link
           parts.push({
             type: 'link',
             content: linkText,
@@ -116,7 +104,6 @@ const Message = ({ message }) => {
           lastIndex = matchStart + fullMatch.length;
         });
         
-        // Add remaining text after last link
         if (lastIndex < line.length) {
           parts.push({
             type: 'text',
@@ -141,7 +128,6 @@ const Message = ({ message }) => {
                   </a>
                 );
               } else {
-                // Apply bold formatting to text parts
                 const boldFormatted = part.content.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
                 return (
                   <span 
@@ -155,12 +141,10 @@ const Message = ({ message }) => {
         );
       }
       
-      // Handle regular URLs in text (including those wrapped in bold formatting)
       const urlRegex = /(https?:\/\/[^\s\*]+)/g;
       const hasUrl = line.match(urlRegex);
       
       if (hasUrl) {
-        // First, extract URLs from bold formatting if they exist
         let processedLine = line.replace(/\*\*(https?:\/\/[^\s\*]+)\*\*/g, '$1');
         const parts = processedLine.split(urlRegex);
         
@@ -181,7 +165,6 @@ const Message = ({ message }) => {
                   </a>
                 );
               } else {
-                // Apply bold formatting to non-URL parts (but not to URLs)
                 const boldFormatted = part.replace(/\*\*((?!https?:\/\/)[^*]+)\*\*/g, '<strong class="text-white">$1</strong>');
                 return (
                   <span 
@@ -195,8 +178,6 @@ const Message = ({ message }) => {
         );
       }
       
-      // Handle regular text with bold formatting only
-      // Remove bold formatting from URLs first, then apply bold to other text
       const cleanedLine = line.replace(/\*\*(https?:\/\/[^\s\*]+)\*\*/g, '$1');
       const formattedLine = cleanedLine.replace(/\*\*((?!https?:\/\/)[^*]+)\*\*/g, '<strong class="text-white">$1</strong>');
       
@@ -216,10 +197,9 @@ const Message = ({ message }) => {
       animate={{ opacity: 1, y: 0 }}
       className={`flex items-start space-x-3 ${isBot ? '' : 'flex-row-reverse space-x-reverse'}`}
     >
-      {/* Avatar */}
       <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center shadow-lg ${
         isBot 
-          ? 'bg-gradient-to-br from-cyan-400 to-blue-500' 
+          ? 'bg-blue-900' 
           : 'bg-gradient-to-br from-emerald-400 to-green-500'
       }`}>
         {isBot ? (
@@ -229,19 +209,16 @@ const Message = ({ message }) => {
         )}
       </div>
 
-      {/* Message Content */}
       <div className={`flex-1 max-w-xs sm:max-w-md lg:max-w-lg xl:max-w-xl ${isBot ? '' : 'flex justify-end'}`}>
         <div className={`relative px-4 py-3 rounded-2xl shadow-lg ${
           isBot
             ? 'bg-gray-800 border border-gray-700 text-gray-100'
-            : 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
+            : 'bg-blue-900 text-white'
         }`}>
-          {/* Message Text */}
           <div className="text-sm leading-relaxed">
             {isBot ? formatBotMessage(message.text) : message.text}
           </div>
           
-          {/* Timestamp */}
           <div className={`flex items-center mt-2 pt-2 border-t border-opacity-20 text-xs ${
             isBot ? 'text-gray-400 border-gray-600' : 'text-cyan-100 border-cyan-300'
           }`}>
@@ -254,7 +231,6 @@ const Message = ({ message }) => {
             )}
           </div>
 
-          {/* Speech bubble tail */}
           <div className={`absolute top-3 w-0 h-0 ${
             isBot
               ? '-left-2 border-r-8 border-r-gray-800 border-t-8 border-t-transparent border-b-8 border-b-transparent'

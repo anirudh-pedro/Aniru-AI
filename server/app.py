@@ -5,31 +5,26 @@ from dotenv import load_dotenv
 import logging
 from datetime import datetime
 
-# Import services
 from services.fireworks_service import FireworksService
 from services.groq_service import GroqService
 from services.rule_based_chatbot import RuleBasedChatbot
 from routes.chat import chat_bp
 
-# Load environment variables
 load_dotenv()
 
-# Initialize Flask app
 app = Flask(__name__)
 CORS(app)
 
-# Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Circuit breaker for API services
 class CircuitBreaker:
     def __init__(self, failure_threshold=3, reset_timeout=60):
         self.failure_threshold = failure_threshold
         self.reset_timeout = reset_timeout
         self.failure_count = 0
         self.last_failure_time = None
-        self.state = 'closed'  # closed, open, half-open
+        self.state = 'closed' 
     
     def can_execute(self):
         import time
@@ -40,7 +35,7 @@ class CircuitBreaker:
                 self.state = 'half-open'
                 return True
             return False
-        else:  # half-open
+        else:  
             return True
     
     def record_success(self):
@@ -54,16 +49,13 @@ class CircuitBreaker:
         if self.failure_count >= self.failure_threshold:
             self.state = 'open'
 
-# Initialize services
 fireworks_service = FireworksService()
 groq_service = GroqService()
 rule_based_chatbot = RuleBasedChatbot()
 
-# Circuit breakers for each service
 fireworks_circuit_breaker = CircuitBreaker(failure_threshold=2, reset_timeout=30)
 groq_circuit_breaker = CircuitBreaker(failure_threshold=3, reset_timeout=60)
 
-# Register blueprints
 app.register_blueprint(chat_bp, url_prefix='/api')
 
 @app.route('/', methods=['GET'])
@@ -147,7 +139,6 @@ def chat():
         else:
             logger.info("Fireworks API circuit breaker open or service unavailable, skipping enhancement")
 
-        # Step 2: Try to get response from Groq API using enhanced message (with circuit breaker)
         if groq_circuit_breaker.can_execute() and groq_service.is_available():
             try:
                 logger.info("Step 2: Getting response from Groq API")
@@ -170,7 +161,6 @@ def chat():
         else:
             logger.info("Groq API circuit breaker open or service unavailable, using fallback")
             
-        # Step 3: Fallback to rule-based chatbot with enhanced error handling
         try:
             response = rule_based_chatbot.get_response(enhanced_message)
             logger.info("Successfully got response from rule-based chatbot")
@@ -185,7 +175,6 @@ def chat():
             })
         except Exception as fallback_error:
             logger.error(f"Rule-based chatbot also failed: {str(fallback_error)}")
-            # Try with original message as last resort
             try:
                 response = rule_based_chatbot.get_response(user_message)
                 logger.info("Fallback successful with original message")
@@ -225,7 +214,6 @@ Please try asking your question again, and I'll do my best to provide you with d
     except Exception as e:
         logger.error(f"Unexpected error in chat endpoint: {str(e)}")
         
-        # Final fallback
         try:
             response = rule_based_chatbot.get_response(data.get('message', ''))
             return jsonify({

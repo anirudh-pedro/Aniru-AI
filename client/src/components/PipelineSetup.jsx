@@ -1,5 +1,5 @@
 import React from 'react';
-import image1 from '../assets/bc97f699-a633-4ce3-b996-7f7cf8e2e58e.jpeg'
+import image1 from '../assets/pipeline.jpeg'
 
 const PipelineSetup = () => {
   return (
@@ -8,7 +8,7 @@ const PipelineSetup = () => {
         <img 
           src={image1} 
           alt="AI Pipeline Architecture" 
-          className="mx-auto w-full max-w-4xl h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl mb-18"
+          className="mx-auto w-full max-w-4xl h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl pb-20"
         />
       </div>
     </div>
