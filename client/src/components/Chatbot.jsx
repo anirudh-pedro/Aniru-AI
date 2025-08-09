@@ -20,6 +20,28 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Mobile keyboard handling
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        // Only on mobile devices
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        // Scroll to bottom when keyboard appears/disappears
+        setTimeout(() => {
+          scrollToBottom();
+        }, 100);
+      }
+    };
+
+    // Set initial viewport height
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -85,7 +107,7 @@ const Chatbot = () => {
 
   return (
     <div className="flex justify-center items-start min-h-full bg-gradient-to-br from-gray-900 to-black p-4">
-      <div className="w-full max-w-4xl bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col h-[calc(100vh-120px)]">
+      <div className="w-full max-w-4xl bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col h-[calc(100vh-120px)] sm:h-[calc(100vh-120px)]" style={{ height: 'calc(100vh - 120px)', minHeight: 'calc(100vh - 120px)' }}>
         {/* Header */}
         <div className="bg-gray-800 shadow-lg border-b border-gray-700 p-4">
           <div className="flex items-center space-x-3">
@@ -149,8 +171,8 @@ const Chatbot = () => {
           </div>
         )}
 
-        {/* Input Form */}
-        <div className="p-6 bg-gray-800 border-t border-gray-700">
+        {/* Input Form - Only mobile keyboard positioning fix */}
+        <div className="p-6 bg-gray-800 border-t border-gray-700" style={{ position: 'relative' }}>
           <form onSubmit={handleSendMessage} className="flex space-x-3">
             <div className="flex-1 relative">
               <input
@@ -158,8 +180,9 @@ const Chatbot = () => {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder="Ask me anything about Anirudh's portfolio..."
-                className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none pr-12 placeholder-gray-400"
+                className="w-full px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none placeholder-gray-400"
                 disabled={isLoading}
+                style={{ fontSize: '16px' }}
               />
             </div>
             <motion.button
@@ -171,8 +194,8 @@ const Chatbot = () => {
             >
               <Send className="w-4 h-4" />
             </motion.button>
-        </form>
-      </div>
+          </form>
+        </div>
       </div>
     </div>
   );
