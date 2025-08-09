@@ -1,29 +1,13 @@
 {
-  "version": 2,
-  "name": "anirudh-chatbot-frontend",
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
+      "source": "/api/(.*)",
+      "destination": "https://aniru-ai.onrender.com/api/$1"
+    },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "env": {
-    "VITE_API_URL": "https://aniru-ai.onrender.com",
-    "VITE_APP_NAME": "Anirudh's AI Chatbot",
-    "VITE_APP_VERSION": "1.0.0"
-  },
-  "build": {
-    "env": {
-      "VITE_API_URL": "https://aniru-ai.onrender.com"
-    }
-  }
+  ]
 }
+
