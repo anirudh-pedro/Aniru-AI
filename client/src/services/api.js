@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Get API URL from environment variables
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+// Production API URL
+const API_BASE_URL = 'https://aniru-ai.onrender.com';
 
 // Create an axios instance with default configurations
 const api = axios.create({
