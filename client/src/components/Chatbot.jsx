@@ -112,7 +112,7 @@ const Chatbot = () => {
             </div>
             <div>
               <h2 className="text-lg font-semibold text-white">Aniru AI</h2>
-              <p className="text-sm text-gray-400">Portfolio Assistant • Online</p>
+              <p className="text-sm text-gray-400">Personal Assistant • Online</p>
             </div>
           </div>
         </div>
